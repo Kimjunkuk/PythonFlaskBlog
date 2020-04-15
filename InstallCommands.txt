@@ -3,7 +3,8 @@ $ pip3 --version
 $ pip3 install Flask
 $ python3 -m flask --version
 $ pip3 install flask-sqlalchemy
-$ sudo apt-get update -y
-$ sudo apt-get install -y python-flask-bcrypt
-
->>> 
+$ pip3 install flask_bcrypt
+$ python3
+>>> from flask_bcrypt import Bcrypt
+>>> exit()
+$
