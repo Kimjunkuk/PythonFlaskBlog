@@ -1,3 +1,5 @@
+OS : Ubuntu 18.04
+
 $ sudo apt install python3-pip
 $ pip3 --version
 $ pip3 install Flask
@@ -9,5 +11,8 @@ $ python3
 >>> exit()
 $ pip3 install flask_login
 $ python3
->>> from flask_bcrypt import Bcrypt
+>>> from flask_login import LoginManager
+>>> exit()
+$ pip3 install flask_mail
+>>> from flask_mail import Mail
 >>> exit()
