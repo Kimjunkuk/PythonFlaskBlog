@@ -1,3 +1,9 @@
 $ sudo apt install python3-pip
 $ pip3 --version
 $ pip3 install Flask
+$ python3 -m flask --version
+$ pip3 install flask-sqlalchemy
+$ sudo apt-get update -y
+$ sudo apt-get install -y python-flask-bcrypt
+
+>>> 
