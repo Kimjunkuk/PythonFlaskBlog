@@ -24,3 +24,5 @@ $ python3
 $ sudo pip3 install flask-wtf
 >>> from flask_wtf import FlaskForm
 >>> exit()
+
+$ python3 run.py
