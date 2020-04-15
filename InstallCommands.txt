@@ -7,4 +7,7 @@ $ pip3 install flask_bcrypt
 $ python3
 >>> from flask_bcrypt import Bcrypt
 >>> exit()
-$
+$ pip3 install flask_login
+$ python3
+>>> from flask_bcrypt import Bcrypt
+>>> exit()
