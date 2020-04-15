@@ -1,18 +1,23 @@
 OS : Ubuntu 18.04
 
 $ sudo apt install python3-pip
-$ pip3 --version
-$ pip3 install Flask
-$ python3 -m flask --version
-$ pip3 install flask-sqlalchemy
-$ pip3 install flask_bcrypt
+$ sudo pip3 --version
+$ sudo pip3 install Flask
+$ sudo python3 -m flask --version
+$ sudo pip3 install flask-sqlalchemy
+$ sudo pip3 install flask_bcrypt
 $ python3
 >>> from flask_bcrypt import Bcrypt
 >>> exit()
-$ pip3 install flask_login
+$ sudo pip3 install flask_login
 $ python3
 >>> from flask_login import LoginManager
 >>> exit()
-$ pip3 install flask_mail
+$ sudo pip3 install flask_mail
+$ python3
 >>> from flask_mail import Mail
+>>> exit()
+$ sudo pip3 install Pillow
+$ python3
+>>> from PIL import Image  (Pillow library)
 >>> exit()
