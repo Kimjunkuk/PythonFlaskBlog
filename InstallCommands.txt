@@ -21,3 +21,6 @@ $ sudo pip3 install Pillow
 $ python3
 >>> from PIL import Image  (Pillow library)
 >>> exit()
+$ sudo pip3 install flask-wtf
+>>> from flask_wtf import FlaskForm
+>>> exit()
