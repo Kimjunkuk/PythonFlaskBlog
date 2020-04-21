@@ -124,3 +124,26 @@ stdout_logfile=/var/log/flaskblog/flaskblog.out.log
 (venv) ~/Flask_Blog$ sudo touch /var/log/flaskblog/flaskblog.out.log
 
 (venv) ~/Flask_Blog$ sudo supervisorctl reload
+
+(venv) ~/Flask_Blog$ sudo nano /etc/nginx/nginx.conf
+
+....
+        sendfile on;
+        tcp_nopush on;
+        tcp_nodelay on;
+        keepalive_timeout 65;
+        types_hash_max_size 2048;
+        client_max_body_size 5M; <- can fix this size
+        # server_tokens off;
+
+        # server_names_hash_bucket_size 64;
+        # server_name_in_redirect off;
+
+        include /etc/nginx/mime.types;
+        default_type application/octet-stream;
+
+        ##
+        # SSL Settings
+....
+
+(venv) ~/Flask_Blog$ sudo systemctl restart nginx
