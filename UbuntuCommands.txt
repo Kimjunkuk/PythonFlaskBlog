@@ -57,6 +57,70 @@ class Config:
 
 (venv) ~/Flask_Blog$ pip install gunicorn
 
-(venv) ~/Flask_Blog$ sudo rm /etc/nginx/sites-enabled/default
+(venv) $ sudo rm /etc/nginx/sites-enabled/default
 
-(venv) ~/Flask_Blog$ sudo nano /etc/nginx/sites-enabled/flaskblog
+(venv) $ sudo nano /etc/nginx/sites-enabled/flaskblog
+
+server{
+       listen 80;
+       server_name 3.219.251.247;
+
+       location /static {
+               alias /home/ubuntu/Flask_Blog/flaskblog/static;
+       }
+
+       location / {
+               proxy_pass http://localhost:8000;
+               include /etc/nginx/proxy_params;
+               proxy_redirect off;
+       }
+
+}
+
+** listen : port;
+** sernver_name IP address;
+** location /static <- (CSS, JS, Pictures)'s loacation
+** proxy_pass <- gunicorn use port 8000
+
+(venv) $ sudo ufw allow http/tcp
+
+(venv) $ sudo ufw delete allow 5000
+
+(venv) $ sudo ufw enable
+
+Command may disrupt existing ssh connection. Proceed with operation (y|n)? y
+...
+
+(venv) $ sudo systemctl restart nginx
+
+(venv) $ nproc --all
+1
+(venv) $ cd Flask_Blog/
+
+(venv) ~/Flask_Blog$ cat run.py
+
+(venv) ~/Flask_Blog$ gunicorn -w 3 run:app
+
+(venv) ~/Flask_Blog$ sudo apt install supervisor
+
+(venv) ~/Flask_Blog$ sudo nano /etc/supervisor/conf.d/flaskblog.conf
+
+[program:flaskblog]
+directory=/home/ubuntu/Flask_Blog
+command=/home/ubuntu/Flask_Blog/venv/bin/gunicorn -w 3 run:app
+user=ubuntu
+autostart=true
+autorestart=true
+stopasgroup=true
+killasgroup=true
+stderr_logfile=/var/log/flaskblog/flaskblog.err.log
+stdout_logfile=/var/log/flaskblog/flaskblog.out.log
+
+
+(venv) ~/Flask_Blog$ sudo mkdir -p /var/log/flaskblog
+
+(venv) ~/Flask_Blog$ sudo touch /var/log/flaskblog/flaskblog.err.log
+
+(venv) ~/Flask_Blog$ sudo touch /var/log/flaskblog/flaskblog.out.log
+
+(venv) ~/Flask_Blog$ sudo supervisorctl reload
