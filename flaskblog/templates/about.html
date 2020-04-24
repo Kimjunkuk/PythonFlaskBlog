@@ -57,7 +57,7 @@
             {% endif %}
           {% endwith %}
           {% block content %}
-          {# 04/24/20_Mason_해당 페이지의 컨텐츠 삽입부  #}
+          {# 04/24/20_Mason_Contents Part  #}
             <div class="about-section">
               <h1>About Mason Page</h1>
               <p>Some text about who we are and what we do.</p>
@@ -86,7 +86,7 @@
             <h3>Menu Bar</h3>
             <p class='text-muted'>
               <ul class="list-group">
-                <!--https://www.w3schools.com/bootstrap4/bootstrap_list_groups.asp <= Link 참조-->
+                <!--https://www.w3schools.com/bootstrap4/bootstrap_list_groups.asp <= Link-->
                 <li><a href="{{ url_for('main.about') }}" class="list-group-item list-group-item-action">About Mason</a></li>
                 <li><a href="{{ url_for('main.experience') }}" class="list-group-item list-group-item-action">Experience</a></li>
                 <li><a href="{{ url_for('main.education') }}" class="list-group-item list-group-item-action">Education</a></li>
